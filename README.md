@@ -1,0 +1,1 @@
+Estudo de Streamlit e as suas aplicações. Aprendendo a usar conceitos básicos e intermediários
