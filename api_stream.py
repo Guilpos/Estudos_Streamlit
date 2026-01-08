@@ -7,7 +7,7 @@ app = FastAPI()
 
 # Vamos expandir nossa base de dados simulada para ter categorias
 DADOS_MOCK = [
-    {"produto": "Notebook", "categoria": "Eletronicos", "preco": 3500},
+    {"produto": "Laptop", "categoria": "Eletronicos", "preco": 3500},
     {"produto": "Mouse", "categoria": "Acessorios", "preco": 50},
     {"produto": "Teclado", "categoria": "Acessorios", "preco": 120},
     {"produto": "Monitor", "categoria": "Eletronicos", "preco": 1200},

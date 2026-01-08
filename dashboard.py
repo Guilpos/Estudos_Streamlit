@@ -37,7 +37,7 @@ def carregar_dados(categoria_escolhida):
             return pd.DataFrame()
 
     except Exception as e:
-        st.error(f"Erro de conexão: {e}")
+        st.error(f"Erro de conexão! {e}")
         return pd.DataFrame()
 
 
