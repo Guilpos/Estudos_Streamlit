@@ -28,18 +28,17 @@ def carregar_dados(categoria_escolhida):
 
     try:
         # A mágica acontece aqui: passamos 'params='
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, timeout=2)
 
         if response.status_code == 200:
             return pd.DataFrame(response.json())
-        else:
-            st.error("Erro na resposta da API")
-            return pd.DataFrame()
-
     except Exception as e:
         st.error(f"Erro de conexão! {e}")
-        return pd.DataFrame()
+        pass
 
+    # --- MODO DEMONSTRAÇÃO (FALLBACK) ---
+    # Se chegamos aqui, a API falhou. Vamos gerar dados falsos para o Dashboard não quebrar.
+    st.warning(f"⚠️ API Indisponível. Exibindo dados simulados para: {categoria_escolhida}")
 
 # Chamada da função passando o filtro da sidebar
 df = carregar_dados(filtro_selecionado)
